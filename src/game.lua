@@ -1,4 +1,6 @@
 local g = {
+	dog = nil,
+	player = nil,
 	mobs = {},
 	map = Dimetric_Map:create(LEVEL)
 }
@@ -9,10 +11,11 @@ function g.init ()
 	end
 	LOVESIZE:set(800, 600)
 	LG.setFont(LG.newFont(32))
-	local dog = Dog:create(6, 1, g.map)
+	g.dog = Dog:create(6, 1, g.map)
+	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs = {}
-	g.mobs[#g.mobs + 1] = dog
-	g.mobs[#g.mobs + 1] = Player:create(5, 1, g.map, dog)
+	g.mobs[#g.mobs + 1] = g.dog
+	g.mobs[#g.mobs + 1] = g.player
 	love.draw = g.draw
 	love.update = g.update
 	love.resize = function (w, h)
@@ -32,7 +35,7 @@ function g.update (dt)
 	for i = 1, #g.mobs do
 		g.mobs[i]:update(dt)
 	end
-	if INPUT:pressed("back") then
+	if INPUT:pressed("back") or g.player:win_condition() then
 		g.exit()
 	end
 end

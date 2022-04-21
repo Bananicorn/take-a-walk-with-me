@@ -21,6 +21,12 @@ function Player:set_camera ()
 	self.map.offset_y = -dy + LG.getHeight() / 2
 end
 
+function Player:win_condition ()
+	local x, y = math.floor(self.pos.x), math.floor(self.pos.y)
+	local win_tile = 4
+	return self.map:get_sprite_type(x, y) == win_tile
+end
+
 function Player:update (dt)
 	local force = 1 * dt --tiles per second
 	local has_moved = false
