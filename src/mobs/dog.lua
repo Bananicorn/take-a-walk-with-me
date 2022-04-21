@@ -6,10 +6,14 @@ function Dog:create (x, y, map)
 	local dog = {}
 	setmetatable(dog, Dog)
 	dog:init_default_value(x, y, map)
+	dog.mass = .01
 	return dog
 end
 
 function Dog:update (dt)
+	local dir = {"up", "down", "left", "right"}
+	local a = VECTOR.dir(dir[math.random(1, 4)]) * .01
+	self.vel = self.vel + a
 	self:physics()
 end
 

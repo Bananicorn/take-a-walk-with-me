@@ -7,6 +7,8 @@ function Player:create (x, y, map, dog)
 	setmetatable(player, Player)
 	player:init_default_value(x, y, map)
 	player.dog = dog
+	player.mass = .01
+	player.tether_length = 1.5 --length in tiles
 	return player
 end
 
@@ -44,26 +46,29 @@ function Player:update (dt)
 	if has_moved then
 		self.vel = self.vel + dir
 	end
-	--self:apply_tether()
 	self:physics()
+	self:apply_tether()
 	self:set_camera()
 end
 
 function Player:apply_tether ()
-	local tether_length = 1.5 --length in tiles
 	local dist = (self.pos - self.dog.pos).length
-	if dist > tether_length then
-		local orig_vel = self.vel.copy
+	if dist > self.tether_length then
 		local orig_dog_vel = self.dog.vel.copy
-		self.vel = orig_vel + (orig_dog_vel * .3)
-		self.dog.vel = orig_vel + orig_dog_vel
+		local a = self.pos - self.dog.pos
+		a.length = self.mass
+		self.dog.vel = self.dog.vel + a
+		a.length = self.dog.mass
+		self.vel = self.vel - a
 	end
 end
 
 function Player:draw ()
 	local x, y = self.map:tile_pos_to_screen(self.pos.x, self.pos.y)
+	local dx, dy = self.map:tile_pos_to_screen(self.dog.pos.x, self.dog.pos.y)
 	LG.setColor(1, 0, 0)
 	LG.circle("fill", x, y - self.size, self.size)
+	LG.line(x, y - self.size, dx, dy - self.dog.size)
 end
 
 return Player
