@@ -1,0 +1,18 @@
+These are the Credits.
+
+Input is handled by baton.lua, written by Andrew Minnich, but modified by me.
+So if anything's wrong with the input, it's probably my fault.
+
+
+Testing text
+
+multiple
+
+lines
+
+
+apart
+
+
+#Testing title
+##Testing sub-title

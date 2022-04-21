@@ -1,0 +1,9 @@
+#vim swap files
+*.sw*
+*.love
+win32
+lin
+mac
+android
+tags
+downloads
