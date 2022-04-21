@@ -1,5 +1,6 @@
 require("base.love_shortcuts")
 IS_MOBILE = love.system.getOS() == "Android" or love.system.getOS() == "iOS"
+SKIP_INTRO = true
 
 if IS_MOBILE then
 	TOUCH_CLASSES = require("base.touch_classes")

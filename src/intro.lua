@@ -10,6 +10,9 @@ i.init = function (callback)
 	i.callback = callback
 	love.draw = i.render_splash_screen
 	love.update = i.inputs
+	if SKIP_INTRO then
+		i.callback()
+	end
 end
 
 i.inputs = function ()
