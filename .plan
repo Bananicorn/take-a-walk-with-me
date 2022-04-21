@@ -1,9 +1,7 @@
 [x] Render objects into world correctly
-
-[ ] Render player and dog as circles (at first)
+[x] Render player and dog as circles (at first)
 
 [ ] Game mechanics
-	[ ] Couple love.physics with dimetric renderer
 	[ ] Tether player and dog together
 	[ ] Set start and goal for level
 	[?] Can the dog break free?
