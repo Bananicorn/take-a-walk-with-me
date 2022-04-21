@@ -9,6 +9,8 @@ if IS_MOBILE then
 end
 
 --Classes
+Mob = require("mobs.mob")
+Player = require("mobs.player")
 Dimetric_Map = require("dimetric")
 
 UTF8 = require("utf8")
@@ -33,15 +35,6 @@ function love.load ()
 	end
 	LK.setKeyRepeat(true)
 	INTRO.init(MENU.init)
-end
-
-function love.mousereleased (x, y, key)
-end
-
-function love.keyreleased (key)
-end
-
-function love.update (dt)
 end
 
 love.draw = MENU.draw

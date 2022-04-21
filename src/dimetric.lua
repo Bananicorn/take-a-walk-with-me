@@ -16,7 +16,8 @@ function Dimetric_Map:create(level, elevation_unit)
 		offset_y = 0,
 		elevation_map = level.elevation_map,
 		tile_map = level.tile_map,
-		sprites = Dimetric_Map:get_sprites_from_level(level)
+		sprites = Dimetric_Map:get_sprites_from_level(level),
+		objects = {},
 	}
 	setmetatable(map, Dimetric_Map)
 	return map
@@ -226,6 +227,11 @@ function Dimetric_Map:draw_tile(tile_x, tile_y, elevation, draw_offset_x, draw_o
 	end
 end
 
+function Dimetric_Map:draw_object(object)
+	--as long as we only have a handful of moving objects, that's fine...
+	self.objects[math.ceil(object.x) .. '_' .. math.ceil(object.y)] = object
+end
+
 function Dimetric_Map:draw(x, y, width, height)
 	LG.setColor(1, 1, 1)
 	LG.rectangle("fill", x, y, width, height)
@@ -233,9 +239,14 @@ function Dimetric_Map:draw(x, y, width, height)
 	for tx = 0, self.width - 1 do
 		for ty = 0, self.height - 1 do
 			local elevation = self:get_elevation(tx, ty)
+			local object_key = tx .. "_" ..  ty
 			if self:is_tile_in_view(width, height, tx, ty, elevation) then
 				local sprite_type = self:get_sprite_type(tx, ty)
 				self:draw_tile(tx, ty, elevation, x, y, sprite_type)
+			end
+			if self.objects[object_key] then
+				self.objects[object_key]:draw()
+				self.objects[object_key] = nil
 			end
 		end
 	end

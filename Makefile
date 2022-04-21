@@ -10,7 +10,7 @@ CURR_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 CURR_DIR := $(notdir $(patsubst %/,%,$(dir $(CURR_PATH))))
 APKTOOL := java -jar ../platform_dependencies/android/apktool_2.4.1.jar
 
-$(CURR_DIR).love: src/*.lua src/external/*.lua src/base/*.lua assets/*.png credits.txt
+$(CURR_DIR).love: src/*.lua src/**/*.lua src/external/*.lua src/base/*.lua assets/*.png credits.txt
 	#change the window title to the title of the game
 	sed -Ei s/t.window.title\ \=\ \".*\"/t.window.title\ =\ \"$(CURR_DIR)\"/ src/conf.lua
 	mkdir -p src/assets
@@ -20,7 +20,7 @@ $(CURR_DIR).love: src/*.lua src/external/*.lua src/base/*.lua assets/*.png credi
 	rm -rf src/assets
 	rm -rf src/credits.txt
 
-lin: $(CURR_DIR).love 
+lin: $(CURR_DIR).love
 	mkdir -p lin
 	cp $(CURR_DIR).love lin/
 
