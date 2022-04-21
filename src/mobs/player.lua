@@ -9,6 +9,9 @@ function Player:create (x, y, map, dog)
 	player.dog = dog
 	player.mass = .01
 	player.tether_length = 1.5 --length in tiles
+	player.sprite = ASSETS.player
+	player.sprite_width = ASSETS.player:getWidth()
+	player.sprite_height = ASSETS.player:getHeight()
 	return player
 end
 
@@ -73,8 +76,8 @@ function Player:draw ()
 	local x, y = self.map:tile_pos_to_screen(self.pos.x, self.pos.y)
 	local dx, dy = self.map:tile_pos_to_screen(self.dog.pos.x, self.dog.pos.y)
 	LG.setColor(1, 0, 0)
-	LG.circle("fill", x, y - self.size, self.size)
-	LG.line(x, y - self.size, dx, dy - self.dog.size)
+	LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height)
+	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx, dy - self.dog.size)
 end
 
 return Player

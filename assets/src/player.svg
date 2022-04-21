@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   inkscape:export-ydpi="96"
+   inkscape:export-xdpi="96"
+   inkscape:export-filename="/home/bc/love_projects/v11/autonomy/assets/player.png"
+   sodipodi:docname="player.svg"
+   inkscape:version="1.1.2 (08b2f3d93c, 2022-04-05)"
+   id="svg5"
+   version="1.1"
+   viewBox="0 0 4.233333 11.641666"
+   height="0.45833331in"
+   width="0.16666666in"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="in"
+     width="192.5px"
+     showguides="false"
+     inkscape:zoom="4.0816286"
+     inkscape:cx="-31.115031"
+     inkscape:cy="56.840056"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="true"
+     inkscape:snap-global="true"
+     inkscape:snap-others="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-nodes="true"
+     inkscape:snap-bbox="false"
+     inkscape:snap-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-intersection-paths="true">
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid826"
+       gridanglex="26.568"
+       gridanglez="26.57"
+       units="px"
+       spacingy="4.2333333"
+       originx="-0.40387797"
+       originy="-0.80024745"
+       visible="true"
+       snapvisiblegridlinesonly="true"
+       enabled="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.40387796,-0.80024755)">
+    <ellipse
+       style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.0362266"
+       id="path957"
+       cx="2.5205443"
+       cy="1.9965143"
+       rx="1.1923"
+       ry="1.1962668" />
+    <g
+       id="g1320"
+       transform="matrix(3.6166383,0,0,3.6286711,8.9459579,-2.5578838)">
+      <rect
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.01"
+         id="rect1063"
+         width="0.23408996"
+         height="0.93635982"
+         x="-2.3618507"
+         y="1.7458097" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1227"
+         cx="-2.2448058"
+         cy="1.7458097"
+         r="0.11707813" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1229"
+         cx="-2.2448058"
+         cy="2.6821694"
+         r="0.11707813" />
+    </g>
+    <g
+       id="g1328"
+       transform="matrix(9.0974219,0,0,3.6286711,22.942489,-2.1331661)">
+      <rect
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.01"
+         id="rect1322"
+         width="0.23408996"
+         height="0.93635982"
+         x="-2.3618507"
+         y="1.7458097" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1324"
+         cx="-2.2448058"
+         cy="1.7458097"
+         r="0.11707813" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1326"
+         cx="-2.2448058"
+         cy="2.6821694"
+         r="0.11707813" />
+    </g>
+    <g
+       id="g1418"
+       transform="matrix(0,3.6286711,-3.6166383,0,10.527744,11.922747)">
+      <rect
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.01"
+         id="rect1412"
+         width="0.23408996"
+         height="0.93635982"
+         x="-2.3618507"
+         y="1.7458097" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1414"
+         cx="-2.2448058"
+         cy="1.7458097"
+         r="0.11707813" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1416"
+         cx="-2.2448058"
+         cy="2.6821694"
+         r="0.11707813" />
+    </g>
+    <rect
+       style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.0413064"
+       id="rect1500"
+       width="0.84661871"
+       height="4.417531"
+       x="1.4557371"
+       y="7.599545" />
+    <ellipse
+       style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.0128653"
+       id="circle1504"
+       cx="1.8790466"
+       cy="12.017076"
+       rx="0.42342928"
+       ry="0.42483807" />
+    <rect
+       style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.0413064"
+       id="rect1690"
+       width="0.84661871"
+       height="4.417531"
+       x="1.4557371"
+       y="7.599545" />
+    <ellipse
+       style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.0128653"
+       id="circle1772"
+       cx="3.1620417"
+       cy="12.017076"
+       rx="0.42342928"
+       ry="0.42483807" />
+    <rect
+       style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.0413064"
+       id="rect1774"
+       width="0.84661871"
+       height="4.417531"
+       x="2.7387326"
+       y="7.599545" />
+    <g
+       id="g1782"
+       transform="matrix(3.6166383,0,0,3.6286711,12.332432,-2.5578838)">
+      <rect
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.01"
+         id="rect1776"
+         width="0.23408996"
+         height="0.93635982"
+         x="-2.3618507"
+         y="1.7458097" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1778"
+         cx="-2.2448058"
+         cy="1.7458097"
+         r="0.11707813" />
+      <circle
+         style="fill:#b6bb53;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1780"
+         cx="-2.2448058"
+         cy="2.6821694"
+         r="0.11707813" />
+    </g>
+  </g>
+</svg>
