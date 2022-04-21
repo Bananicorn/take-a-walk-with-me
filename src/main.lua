@@ -11,6 +11,7 @@ end
 --Classes
 Mob = require("mobs.mob")
 Player = require("mobs.player")
+Dog = require("mobs.dog")
 Dimetric_Map = require("dimetric")
 
 UTF8 = require("utf8")

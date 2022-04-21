@@ -10,6 +10,7 @@ function g.init ()
 	LOVESIZE:set(800, 600)
 	LG.setFont(LG.newFont(32))
 	g.mobs[#g.mobs + 1] = Player:create(5, 1, g.map)
+	g.mobs[#g.mobs + 1] = Dog:create(6, 1, g.map)
 	love.draw = g.draw
 	love.update = g.update
 	love.resize = function (w, h)
