@@ -3,34 +3,35 @@ Player.__index = Player
 setmetatable(Player, Mob)
 
 function Player:create (x, y, map)
-	local player = {
-		x = x,
-		y = y,
-		size = 10,
-		map = map,
-	}
+	local player = {}
 	setmetatable(player, Player)
-	player:init_physics()
+	player:init_default_value(x, y, map)
 	return player
 end
 
 function Player:update (dt)
 	local force = 3 * dt --tiles per second
+	local has_moved = false
 	if INPUT:down("left") then
-		self.x = self.x - force
+		self.vel.x = -force
+		self.vel.y = 0
 	elseif INPUT:down("right") then
-		self.x = self.x + force
+		self.vel.x = force
+		self.vel.y = 0
 	end
 
 	if INPUT:down("up") then
-		self.y = self.y - force
+		self.vel.y = -force
+		self.vel.x = 0
 	elseif INPUT:down("down") then
-		self.y = self.y + force
+		self.vel.y = force
+		self.vel.x = 0
 	end
+	self:physics()
 end
 
 function Player:draw ()
-	local x, y = self.map:tile_pos_to_screen(self.x, self.y)
+	local x, y = self.map:tile_pos_to_screen(self.pos.x, self.pos.y)
 	LG.setColor(1, 0, 0)
 	LG.circle("fill", x, y - self.size, self.size)
 end

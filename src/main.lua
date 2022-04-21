@@ -22,6 +22,7 @@ INPUT = require("input")
 ASSETS = require("assets")
 CREDITS = require("base.credits")
 LEVEL = require("level")
+VECTOR = require("external.brinevector")
 
 MENU_INPUT = require("menu_input")
 MC = require("base.menu_classes")

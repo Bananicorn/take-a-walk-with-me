@@ -137,7 +137,14 @@ function Dimetric_Map:get_sprite_index(x, y)
 	return y * self.width + x
 end
 
+function Dimetric_Map:is_coord_in_bounds(x, y)
+	return x >= 0 and x < self.width and y >= 0 and y < self.height
+end
+
 function Dimetric_Map:get_elevation(x, y)
+	if not self:is_coord_in_bounds(x, y) then
+		return 1
+	end
 	return self.elevation_map[self:get_sprite_index(x, y)]
 end
 
@@ -229,7 +236,7 @@ end
 
 function Dimetric_Map:draw_object(object)
 	--as long as we only have a handful of moving objects, that's fine...
-	local x, y = math.floor(object.x), math.floor(object.y)
+	local x, y = math.floor(object.pos.x), math.floor(object.pos.y)
 	local objects = self.objects[x .. '_' .. y]
 	if objects then
 		objects[#objects + 1] = object
