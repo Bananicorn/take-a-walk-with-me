@@ -27,7 +27,7 @@ end
 function g.update (dt)
 	INPUT:update()
 	for i = 1, #g.mobs do
-		g.mobs[i]:update()
+		g.mobs[i]:update(dt)
 	end
 	if INPUT:pressed("back") then
 		g.exit()

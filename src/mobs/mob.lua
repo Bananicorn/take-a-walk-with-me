@@ -5,6 +5,7 @@ function Mob:create (x, y, map)
 	local mob = {
 		x = x,
 		y = y,
+		size = 10,
 		map = map,
 	}
 	setmetatable(mob, Mob)
@@ -12,7 +13,7 @@ function Mob:create (x, y, map)
 	return mob
 end
 
-function Mob:update ()
+function Mob:update (dt)
 end
 
 function Mob:init_physics ()

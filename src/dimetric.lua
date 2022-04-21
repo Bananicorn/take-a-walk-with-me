@@ -229,7 +229,9 @@ end
 
 function Dimetric_Map:draw_object(object)
 	--as long as we only have a handful of moving objects, that's fine...
-	self.objects[math.ceil(object.x) .. '_' .. math.ceil(object.y)] = object
+	local x, y = math.floor(object.x), math.floor(object.y)
+	self.objects[x .. '_' .. y] = object
+	print(x .. "_" .. y)
 end
 
 function Dimetric_Map:draw(x, y, width, height)
@@ -239,14 +241,14 @@ function Dimetric_Map:draw(x, y, width, height)
 	for tx = 0, self.width - 1 do
 		for ty = 0, self.height - 1 do
 			local elevation = self:get_elevation(tx, ty)
-			local object_key = tx .. "_" ..  ty
 			if self:is_tile_in_view(width, height, tx, ty, elevation) then
+				local object_key = tx .. "_" ..  ty
 				local sprite_type = self:get_sprite_type(tx, ty)
 				self:draw_tile(tx, ty, elevation, x, y, sprite_type)
-			end
-			if self.objects[object_key] then
-				self.objects[object_key]:draw()
-				self.objects[object_key] = nil
+				if self.objects[object_key] then
+					self.objects[object_key]:draw()
+					self.objects[object_key] = nil
+				end
 			end
 		end
 	end

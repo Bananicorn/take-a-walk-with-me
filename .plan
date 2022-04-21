@@ -1,5 +1,6 @@
-[ ] Render objects into world correctly
-	[ ] Render player and dog as circles (at first)
+[x] Render objects into world correctly
+
+[ ] Render player and dog as circles (at first)
 
 [ ] Game mechanics
 	[ ] Couple love.physics with dimetric renderer
