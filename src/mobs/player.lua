@@ -11,6 +11,8 @@ function Player:create (x, y, map, dog)
 	player.autonomy = .9
 	player.speed = .5 --tiles per second
 	player.tether_length = 1.5 --length in tiles
+	player.stress = 0
+	player.stress_potential = 50
 	return player
 end
 
@@ -24,8 +26,7 @@ function Player:set_camera ()
 end
 
 function Player:end_condition ()
-	return false
-	--return self.dog.stress > 100
+	return self.dog.stress + self.stress > 100
 end
 
 function Player:update (dt)
@@ -70,6 +71,7 @@ function Player:apply_tether (dt)
 		self.vel = self.vel - player_vel_adjust
 
 		self.dog.stress = self.dog.stress + (dt * self.dog.stress_potential)
+		self.stress = self.stress + (dt * self.stress_potential)
 	end
 end
 

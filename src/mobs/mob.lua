@@ -18,6 +18,7 @@ function Mob:init_default_value (x, y, map)
 	self.size = 10
 	self.map = map
 	self.deceleration = .01
+	self.to_remove = false
 	if self.sprite then
 		self.sprite_width = ASSETS.player:getWidth()
 		self.sprite_height = ASSETS.player:getHeight()

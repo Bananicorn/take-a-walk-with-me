@@ -2,16 +2,18 @@
 [x] Render player and dog as circles (at first)
 [ ] Fix buggy line rendering
 [ ] Fix fullscreen
+[ ] Increase score when things happen (dog successfully sniffed, pickups)
 
 [ ] Game mechanics
 	[x] Tether player and dog together
 	[x] Multiple dogs?
-	[ ] Fix autonomy meter, and autonomy/force calculation
-	[ ] Shared stress meter for human and dog! (50+50 = 100, 75+25 = 100)
-		[ ] DIFFERENT COLORS for human stress and dog stress
+	[x] Fix autonomy meter, and autonomy/force calculation
+	[x] Shared stress meter for human and dog! (50+50 = 100, 75+25 = 100)
+		[x] DIFFERENT COLORS for human stress and dog stress
 	[ ] Pickups/Powerups
 		[ ] For line length (temporary)
-		[ ] For stress reduction (bone-shaped treat!)
+		[x] For stress reduction (bone-shaped treat!)
+	[ ] Spawn pickups at random!
 	[x] Reduce stress by X once a target is "done"
 
 [?] Assets needed:

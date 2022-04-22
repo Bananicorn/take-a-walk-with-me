@@ -5,6 +5,8 @@ local assets = {
 	dog = love.graphics.newImage('assets/dog.png'),
 	fire_hydrant = love.graphics.newImage('assets/fire_hydrant.png'),
 	bush = love.graphics.newImage('assets/bush.png'),
+	bone = love.graphics.newImage('assets/bone.png'),
+	drink = love.graphics.newImage('assets/drink.png'),
 }
 
 return assets

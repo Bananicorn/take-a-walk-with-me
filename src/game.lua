@@ -57,6 +57,13 @@ function g.update (dt)
 	if INPUT:pressed("back") then
 		g.exit()
 	end
+	local i = 1
+	while i <= #g.mobs do
+		if g.mobs[i].to_remove then
+			table.remove(g.mobs, i)
+		end
+		i = i + 1
+	end
 	g.score = g.score + dt
 end
 
@@ -74,6 +81,17 @@ function g.draw_end_screen ()
 	LG.setFont(g.font)
 	LG.print(score_text, w / 2 - score_width / 2, h / 2 + title_height - score_height / 2)
 	LG.print("Press space or escape to continue", 10, h - score_height)
+end
+
+function g.draw_combined_bar (x, y, width, height, percentage, color, percentage2, color2)
+	local fill_width = width / 100 * math.max(math.min(percentage, 100), 0)
+	local fill_width2 = width / 100 * math.max(math.min(percentage2, 100), 0)
+	LG.setColor(color)
+	LG.rectangle("fill", x, y, fill_width, height)
+	LG.setColor(color2)
+	LG.rectangle("fill", x + fill_width, y, fill_width2, height)
+	LG.setColor(0, 0, 0)
+	LG.rectangle("line", x, y, width, height)
 end
 
 function g.draw_bar (x, y, width, height, percentage, color)
@@ -100,7 +118,12 @@ function g.draw_ui ()
 	y = y + font_height + bar_height + padding
 	LG.print("Stress", x, y)
 	y = y + font_height
-	g.draw_bar(x, y, bar_width, bar_height, g.player.dog.stress, {.4, .2, .2})
+	g.draw_combined_bar(
+		x, y,
+		bar_width, bar_height,
+		g.player.dog.stress, {.4, .2, .2},
+		g.player.stress, {0, 0, 1}
+	)
 end
 
 function g.draw ()

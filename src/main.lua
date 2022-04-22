@@ -18,6 +18,7 @@ Fire_Hydrant = require("mobs.fire_hydrant")
 Bush = require("mobs.bush")
 Pickup = require("mobs.pickup")
 Bone = require("mobs.bone")
+Drink = require("mobs.drink")
 Dimetric_Map = require("dimetric")
 
 UTF8 = require("utf8")
