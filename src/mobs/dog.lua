@@ -12,6 +12,9 @@ function Dog:create (x, y, map)
 	return dog
 end
 
+function Dog:choose_target (dt)
+end
+
 function Dog:update (dt)
 	local dir = {"up", "down", "left", "right"}
 	local a = VECTOR.dir(dir[math.random(1, 4)]) * .01

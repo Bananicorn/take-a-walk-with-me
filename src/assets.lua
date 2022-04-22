@@ -3,6 +3,7 @@ local assets = {
 	love_logo = love.graphics.newImage('assets/love_logo.png'),
 	player = love.graphics.newImage('assets/player.png'),
 	dog = love.graphics.newImage('assets/dog.png'),
+	fire_hydrant = love.graphics.newImage('assets/fire_hydrant.png'),
 }
 
 return assets

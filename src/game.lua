@@ -16,6 +16,7 @@ function g.init ()
 	g.mobs = {}
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
+	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(2, 2, g.map)
 	love.draw = g.draw
 	love.update = g.update
 	love.resize = function (w, h)
