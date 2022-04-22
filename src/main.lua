@@ -23,7 +23,6 @@ Dimetric_Map = require("dimetric")
 
 UTF8 = require("utf8")
 INSPECT = require("external.inspect")
-LOVESIZE = require("external.lovesize")
 UTIL = require("util")
 INPUT = require("input")
 ASSETS = require("assets")
