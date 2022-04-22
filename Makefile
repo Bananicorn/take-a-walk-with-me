@@ -69,11 +69,11 @@ other/$(CURR_DIR).keystore:
 run: $(CURR_DIR).love
 	love $(CURR_DIR).love
 
-downloads: win lin mac android
+downloads: win lin mac #android
 	mkdir -p downloads
 	cd win32; zip -9 -r ../downloads/$(CURR_DIR)-win32.zip ./
 	cd mac; zip -9 -r ../downloads/$(CURR_DIR)-mac.zip ./
-	cp android/$(CURR_DIR).apk downloads/
+	#cp android/$(CURR_DIR).apk downloads/
 	cp $(CURR_DIR).love downloads/
 
 clean:

@@ -8,7 +8,8 @@ local special_entries = {
 local menu_entries = {
 	special_entries = special_entries,
 	main = {
-		MC.label:create("Take a walk with me"),
+		MC.label:create("Walk me baby,"),
+		MC.label:create("one more time."),
 		MC.entry:create(
 			"Start",
 			function ()

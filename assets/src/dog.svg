@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   inkscape:export-ydpi="96"
+   inkscape:export-xdpi="96"
+   inkscape:export-filename="/home/bc/love_projects/v11/autonomy/assets/dog.png"
+   sodipodi:docname="dog.svg"
+   inkscape:version="1.1.2 (08b2f3d93c, 2022-04-05)"
+   id="svg5"
+   version="1.1"
+   viewBox="0 0 6.6405193 6.4781034"
+   height="0.25504345in"
+   width="0.26143777in"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="in"
+     width="192.5px"
+     showguides="false"
+     inkscape:zoom="7.3421209"
+     inkscape:cx="4.6308145"
+     inkscape:cy="21.247267"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="true"
+     inkscape:snap-global="true"
+     inkscape:snap-others="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-nodes="true"
+     inkscape:snap-bbox="false"
+     inkscape:snap-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-intersection-paths="true">
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid826"
+       gridanglex="26.568"
+       gridanglez="26.57"
+       units="px"
+       spacingy="4.2333333"
+       originx="-0.11575114"
+       originy="-3.4510784"
+       visible="true"
+       snapvisiblegridlinesonly="true"
+       enabled="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.11575113,-3.4510784)">
+    <path
+       id="path957"
+       style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0282924"
+       d="M 5.3243462,3.4510784 A 0.93426926,0.93117123 0 0 0 4.3900438,4.3821523 0.93426926,0.93117123 0 0 0 5.3243462,5.3132261 0.93426926,0.93117123 0 0 0 6.1234472,4.8636309 H 6.4245228 A 0.33179314,0.48158189 0 0 0 6.7562707,4.3821523 0.33179314,0.48158189 0 0 0 6.4245228,3.9006736 H 6.1242545 A 0.93426926,0.93117123 0 0 0 5.3243462,3.4510784 Z" />
+    <g
+       id="g1328"
+       transform="matrix(0,9.0974219,-3.6286711,0,11.274791,27.043025)"
+       style="fill:#fefefe;fill-opacity:1">
+      <rect
+         style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.01"
+         id="rect1322"
+         width="0.23408996"
+         height="0.93635982"
+         x="-2.3618507"
+         y="1.7458097" />
+      <circle
+         style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1324"
+         cx="-2.2448058"
+         cy="1.7458097"
+         r="0.11707813" />
+      <circle
+         style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.00355136"
+         id="circle1326"
+         cx="-2.2448058"
+         cy="2.6821694"
+         r="0.11707813" />
+    </g>
+    <ellipse
+       style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0128653"
+       id="circle1772"
+       cx="1.5420799"
+       cy="9.504344"
+       rx="0.42342928"
+       ry="0.42483807" />
+    <rect
+       style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.033371"
+       id="rect1774"
+       width="0.84661871"
+       height="2.8832645"
+       x="1.118771"
+       y="6.6210794" />
+    <ellipse
+       style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0128653"
+       id="ellipse1507"
+       cx="4.9398212"
+       cy="9.504344"
+       rx="0.42342928"
+       ry="0.42483807" />
+    <rect
+       style="fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke-width:0.033371"
+       id="rect1509"
+       width="0.84661871"
+       height="2.8832645"
+       x="4.5165124"
+       y="6.6210794" />
+    <path
+       style="fill:#fefefe;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 1.5420803,5.5562724 C 0.43592941,5.2995894 0.60423266,5.1572907 0.11575113,4.0683557 0.35346673,5.4334327 0.39365375,5.2882594 1.5420801,6.1227559"
+       id="path1579"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>

@@ -5,13 +5,11 @@ setmetatable(Player, Mob)
 function Player:create (x, y, map, dog)
 	local player = {}
 	setmetatable(player, Player)
+	player.sprite = ASSETS.player
 	player:init_default_value(x, y, map)
 	player.dog = dog
 	player.mass = .01
 	player.tether_length = 1.5 --length in tiles
-	player.sprite = ASSETS.player
-	player.sprite_width = ASSETS.player:getWidth()
-	player.sprite_height = ASSETS.player:getHeight()
 	return player
 end
 
@@ -26,7 +24,7 @@ end
 
 function Player:win_condition ()
 	local x, y = math.floor(self.pos.x), math.floor(self.pos.y)
-	local win_tile = 4
+	local win_tile = 2
 	return self.map:get_sprite_type(x, y) == win_tile
 end
 
@@ -50,7 +48,11 @@ function Player:update (dt)
 		dy = 1
 	end
 	local dir = VECTOR(dx, dy)
-	dir.length = force
+	if INPUT:down("left") then
+		dir.length = force / 2
+	else
+		dir.length = force
+	end
 	dir.angle = dir.angle - math.pi / 4
 	if has_moved then
 		self.vel = self.vel + dir
@@ -75,9 +77,9 @@ end
 function Player:draw ()
 	local x, y = self.map:tile_pos_to_screen(self.pos.x, self.pos.y)
 	local dx, dy = self.map:tile_pos_to_screen(self.dog.pos.x, self.dog.pos.y)
-	LG.setColor(1, 0, 0)
+	LG.setColor(0, 0, 1)
 	LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height)
-	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx, dy - self.dog.size)
+	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx, dy - self.dog.sprite_height * .8)
 end
 
 return Player

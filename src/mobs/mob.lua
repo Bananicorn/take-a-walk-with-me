@@ -17,6 +17,10 @@ function Mob:init_default_value (x, y, map)
 	self.vel = VECTOR(0, 0)
 	self.size = 10
 	self.map = map
+	if self.sprite then
+		self.sprite_width = ASSETS.player:getWidth()
+		self.sprite_height = ASSETS.player:getHeight()
+	end
 end
 
 function Mob:update (dt)
@@ -44,8 +48,16 @@ end
 
 function Mob:draw ()
 	local x, y = self.map:tile_pos_to_screen(self.pos.x, self.pos.y)
-	LG.setColor(1, 0, 0)
-	LG.circle("fill", x, y, 10)
+	if self.tint_color then
+		LG.setColor(self.tint_color)
+	else
+		LG.setColor(1, 1, 1)
+	end
+	if self.sprite then
+		LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height)
+	else
+		LG.circle("fill", x, y, 10)
+	end
 end
 
 return Mob
