@@ -11,9 +11,9 @@ function g.init ()
 	end
 	LOVESIZE:set(800, 600)
 	LG.setFont(LG.newFont(32))
-	g.dog = Dog:create(6, 1, g.map)
-	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs = {}
+	g.dog = Dog:create(6, 1, g.map, g.mobs)
+	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
 	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(2, 2, g.map)

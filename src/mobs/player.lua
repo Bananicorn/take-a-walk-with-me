@@ -9,6 +9,7 @@ function Player:create (x, y, map, dog)
 	player:init_default_value(x, y, map)
 	player.dog = dog
 	player.mass = .01
+	player.speed = .5 --tiles per second
 	player.tether_length = 1.5 --length in tiles
 	return player
 end
@@ -29,7 +30,7 @@ function Player:win_condition ()
 end
 
 function Player:update (dt)
-	local force = 1 * dt --tiles per second
+	local speed = self.speed * dt --tiles per second
 	local has_moved = false
 	local dx, dy = 0, 0
 	if INPUT:down("left") then
@@ -48,11 +49,7 @@ function Player:update (dt)
 		dy = 1
 	end
 	local dir = VECTOR(dx, dy)
-	if INPUT:down("left") then
-		dir.length = force / 2
-	else
-		dir.length = force
-	end
+	dir.length = speed
 	dir.angle = dir.angle - math.pi / 4
 	if has_moved then
 		self.vel = self.vel + dir
@@ -79,7 +76,7 @@ function Player:draw ()
 	local dx, dy = self.map:tile_pos_to_screen(self.dog.pos.x, self.dog.pos.y)
 	LG.setColor(0, 0, 1)
 	LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height)
-	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx, dy - self.dog.sprite_height * .35)
+	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx + self.dog.sprite_width * .75, dy - self.dog.sprite_height * .35)
 end
 
 return Player
