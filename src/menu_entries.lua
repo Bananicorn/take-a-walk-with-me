@@ -13,7 +13,7 @@ local menu_entries = {
 		MC.entry:create(
 			"Start",
 			function ()
-				GAME.init()
+				GAME.init(LEVEL, SPAWNER)
 			end
 		),
 		MC.link:create(

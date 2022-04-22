@@ -2,15 +2,17 @@ local g = {
 	dog = nil,
 	player = nil,
 	mobs = {},
-	map = Dimetric_Map:create(LEVEL),
+	map = nil,
+	spawner = nil,
 	start_time = 0,
 }
-function g.init ()
+function g.init (level, spawner)
 	UTIL.unset_love_hooks()
 	if IS_MOBILE then
 		TOUCH_CONTROLS.init()
 	end
-	LOVESIZE:set(800, 600)
+	g.map = Dimetric_Map:create(level)
+	g.spawner = spawner
 	g.start_time = love.timer.getTime()
 	g.score = 0
 	g.score_multiplier = 100
@@ -22,7 +24,8 @@ function g.init ()
 	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
-	LEVEL.init(g)
+	level.init(g)
+	spawner.init(g)
 
 	love.draw = g.draw
 	love.update = g.update
@@ -30,7 +33,6 @@ function g.init ()
 		if IS_MOBILE then
 			TOUCH_CONTROLS.resize(w, h)
 		end
-		LOVESIZE:resize(w, h)
 	end
 end
 
@@ -47,6 +49,7 @@ end
 
 function g.update (dt)
 	INPUT:update()
+	g.spawner:update()
 	for i = 1, #g.mobs do
 		g.mobs[i]:update(dt)
 	end
@@ -128,7 +131,6 @@ end
 
 function g.draw ()
 	LG.clear(0, 0, 0)
-	LOVESIZE.begin()
 	local w, h = LG.getWidth(), LG.getHeight()
 
 	for i = 1, #g.mobs do
@@ -138,7 +140,6 @@ function g.draw ()
 
 	g.draw_ui()
 
-	LOVESIZE.finish()
 	LG.setColor(1, 1, 1, 1)
 	if IS_MOBILE then
 		TOUCH_CONTROLS.draw()

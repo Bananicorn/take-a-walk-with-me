@@ -10,7 +10,8 @@ function Player:create (x, y, map, dog)
 	player.dog = dog
 	player.autonomy = .9
 	player.speed = .5 --tiles per second
-	player.tether_length = 1.5 --length in tiles
+	player.base_tether_length = 5 --length in tiles
+	player.tether_length = player.base_tether_length --length in tiles
 	player.stress = 0
 	player.stress_potential = 50
 	return player

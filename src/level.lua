@@ -4,8 +4,6 @@ return {
 	tilesize = 128,
 	init = function (g)
 
-		g.mobs[#g.mobs + 1] = Bone:create(5, 5, g.map)
-		g.mobs[#g.mobs + 1] = Drink:create(4, 4, g.map)
 		--have some bushes grow alongside the path
 		for i = 1, 9 do
 			g.mobs[#g.mobs + 1] = Bush:create(6, 2 + i, g.map)

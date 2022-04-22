@@ -36,6 +36,7 @@ MC = require("base.menu_classes")
 MENU = require("base.menu")
 INTRO = require("intro")
 
+SPAWNER = require("spawner")
 GAME = require("game")
 
 function love.load ()
