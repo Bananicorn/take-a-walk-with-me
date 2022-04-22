@@ -16,7 +16,7 @@ function Dog:create (x, y, map, target_pool)
 	dog.smell_countdown = 0
 	dog.target = nil
 	dog.last_targets = {}
-	for i = 1, 3 do
+	for i = 1, 20 do
 		dog.last_targets[i] = false
 	end
 	return dog
@@ -34,6 +34,7 @@ function Dog:choose_target ()
 		if self.target then
 			self:push_last_target(self.target)
 		end
+		self.target = nil
 		for i = 1, #self.target_pool do
 			local target = self.target_pool[i]
 			if target.is_target then
