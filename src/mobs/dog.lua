@@ -2,18 +2,19 @@ local Dog = {}
 Dog.__index = Dog
 setmetatable(Dog, Mob)
 
-function Dog:create (x, y, map, target_pool)
+function Dog:create (x, y, map, target_pool, tint_color)
 	local dog = {}
 	local target_memory_size = 10
 	setmetatable(dog, Dog)
 	dog.sprite = ASSETS.dog
 	dog:init_default_value(x, y, map)
-	dog.speed = .05
-	dog.tint_color = {.3, .2, .1}
+	dog.speed = .1
+	dog.smell_stress_reduction = 5
+	dog.tint_color = tint_color or dog:get_random_color()
 	dog.target_pool = target_pool or {}
 	dog.smell_range = .5 --how close do we need to be to smell? (in tiles)
-	dog.min_smell_time = .5
-	dog.max_smell_time = 10
+	dog.min_smell_time = .2 --seconds
+	dog.max_smell_time = 3 --seconds
 	dog.smell_countdown = 0
 	dog.target = nil
 	dog.last_targets = {}
@@ -27,6 +28,11 @@ function Dog:create (x, y, map, target_pool)
 	return dog
 end
 
+function Dog:get_random_color (target)
+	local r, g, b = math.random(0, 4), math.random(0, 2), 1
+	return {r / 10, g / 10, b / 10}
+end
+
 function Dog:push_last_target (target)
 	for i = 1, #self.last_targets - 1 do
 		self.last_targets[i] = self.last_targets[i + 1]
@@ -37,6 +43,7 @@ end
 function Dog:choose_target ()
 	if not self.target or self.smell_countdown < 0 then
 		if self.target then
+			self.stress = self.stress - self.smell_stress_reduction
 			self:push_last_target(self.target)
 			self.target = nil
 		end
@@ -46,15 +53,10 @@ function Dog:choose_target ()
 				goto continue
 			end
 
-			local is_in_last_targets = false
 			for j = 1, #self.last_targets do
 				if self.last_targets[j] == target then
-					is_in_last_targets = true
-					break
+					goto continue
 				end
-			end
-			if is_in_last_targets then
-				goto continue
 			end
 
 			local is_in_range = (self.pos - target.pos).length <= target.targeting_range

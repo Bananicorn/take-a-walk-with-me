@@ -2,23 +2,19 @@
 [x] Render player and dog as circles (at first)
 
 [ ] Game mechanics
-	[ ] Tether player and dog together
-	[ ] Set start and goal for level
-	[?] Can the dog break free?
-	[?] Multiple dogs?
+	[x] Tether player and dog together
+	[x] Multiple dogs?
+	[ ] Pickups/Powerups
+		[ ] For line length (temporary)
+		[ ] For stress reduction (bone-shaped treat!)
+	[x] Reduce stress by X once a target is "done"
 
-[ ] Assets needed:
-	[ ] Player
-	[ ] At least one dog
-	[ ] Tiles
-		[ ] Single wide
-		[ ] Grass tiles
-		[ ] Car
-		[?] Sidewalks?
-		[?] Crosswalks
-		[?] Double wide with varying lines in the middle
-		[?] Bus
-	[?] Office buildings? (check how to deal with occlusion first)
+[?] Assets needed:
+	[x] Player
+	[x] At least one dog
+	[x] Tiles
+		[x] Single wide
+		[x] Grass tiles
 
 [ ] Sounds
 	[ ] Add sounds for actions made on my phone

@@ -18,7 +18,7 @@ function g.init ()
 	g.big_font = LG.newFont(32)
 	LG.setFont(g.font)
 	g.mobs = {}
-	g.dog = Dog:create(6, 1, g.map, g.mobs)
+	g.dog = Dog:create(6, 1, g.map, g.mobs, {.3, .2, .1})
 	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
