@@ -12,7 +12,10 @@ function g.init ()
 	end
 	LOVESIZE:set(800, 600)
 	g.start_time = love.timer.getTime()
+	g.score = 0
+	g.score_multiplier = 100
 	g.font = LG.newFont(16)
+	g.big_font = LG.newFont(32)
 	LG.setFont(g.font)
 	g.mobs = {}
 	g.dog = Dog:create(6, 1, g.map, g.mobs)
@@ -44,16 +47,43 @@ function g.exit ()
 	MENU.init()
 end
 
+function g.update_end_screen (dt)
+	INPUT:update()
+	if INPUT:pressed("back") or INPUT:pressed("action") then
+		g.exit()
+	end
+end
+
 function g.update (dt)
 	INPUT:update()
 	for i = 1, #g.mobs do
 		g.mobs[i]:update(dt)
 	end
-	if INPUT:pressed("back") or g.player:win_condition() then
+	if g.player:end_condition() then
+		love.draw = g.draw_end_screen
+		love.update = g.update_end_screen
+	end
+	if INPUT:pressed("back") then
 		g.exit()
 	end
+	g.score = g.score + dt
 end
 
+function g.draw_end_screen ()
+	local title_text = "Game over!"
+	local w, h = LG.getWidth(), LG.getHeight()
+	local title_height = g.big_font:getHeight()
+	local title_width = g.big_font:getWidth(title_text)
+	LG.setFont(g.big_font)
+	LG.print(title_text, w / 2 - title_width / 2, h / 2 - title_height / 2)
+
+	local score_text = "Score: " .. math.floor(g.score * g.score_multiplier)
+	local score_height = g.big_font:getHeight()
+	local score_width = g.big_font:getWidth(score_text)
+	LG.setFont(g.font)
+	LG.print(score_text, w / 2 - score_width / 2, h / 2 + title_height - score_height / 2)
+	LG.print("Press space or escape to continue", 10, h - score_height)
+end
 
 function g.draw_bar (x, y, width, height, percentage, color)
 	local fill_width = width / 100 * math.max(math.min(percentage, 100), 0)
@@ -72,6 +102,7 @@ function g.draw_ui ()
 	local x, y = w - bar_width - padding, padding
 
 	LG.setColor(0, 0, 0)
+	LG.print("Score: " .. math.floor(g.score * g.score_multiplier), padding, y)
 	LG.print("Autonomy", x, y)
 	y = y + font_height
 	g.draw_bar(x, y, bar_width, bar_height, g.player.autonomy * 100, {0, 1, 0})
