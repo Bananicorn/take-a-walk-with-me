@@ -8,7 +8,7 @@ function Dog:create (x, y, map, target_pool)
 	dog.sprite = ASSETS.dog
 	dog:init_default_value(x, y, map)
 	dog.mass = .01
-	dog.speed = .5
+	dog.speed = .05
 	dog.tint_color = {.3, .2, .1}
 	dog.target_pool = target_pool or {}
 	dog.smell_range = .5 --how close do we need to be to smell? (in tiles)

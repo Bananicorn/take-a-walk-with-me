@@ -4,6 +4,7 @@ local assets = {
 	player = love.graphics.newImage('assets/player.png'),
 	dog = love.graphics.newImage('assets/dog.png'),
 	fire_hydrant = love.graphics.newImage('assets/fire_hydrant.png'),
+	bush = love.graphics.newImage('assets/bush.png'),
 }
 
 return assets

@@ -21,7 +21,7 @@ function g.init ()
 	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(7, 6, g.map)
 	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(10, 10, g.map)
 	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(12, 10, g.map)
-	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(11, 10, g.map)
+	g.mobs[#g.mobs + 1] = Bush:create(11, 10, g.map)
 	love.draw = g.draw
 	love.update = g.update
 	love.resize = function (w, h)
