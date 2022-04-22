@@ -18,7 +18,7 @@ function g.init ()
 	g.big_font = LG.newFont(32)
 	LG.setFont(g.font)
 	g.mobs = {}
-	g.dog = Dog:create(6, 1, g.map, g.mobs, {.3, .2, .1})
+	g.dog = Dog:create(6, 1, g.map, g.mobs, {.4, .1, .1})
 	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
@@ -100,7 +100,7 @@ function g.draw_ui ()
 	y = y + font_height + bar_height + padding
 	LG.print("Stress", x, y)
 	y = y + font_height
-	g.draw_bar(x, y, bar_width, bar_height, g.player.dog.stress, {0, 0, 1})
+	g.draw_bar(x, y, bar_width, bar_height, g.player.dog.stress, {.4, .2, .2})
 end
 
 function g.draw ()
