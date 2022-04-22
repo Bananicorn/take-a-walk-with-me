@@ -8,7 +8,7 @@ function Player:create (x, y, map, dog)
 	player.sprite = ASSETS.player
 	player:init_default_value(x, y, map)
 	player.dog = dog
-	player.mass = .01
+	player.autonomy = .01
 	player.speed = .5 --tiles per second
 	player.tether_length = 1.5 --length in tiles
 	return player
@@ -64,9 +64,9 @@ function Player:apply_tether ()
 	if dist > self.tether_length then
 		local orig_dog_vel = self.dog.vel.copy
 		local a = self.pos - self.dog.pos
-		a.length = self.mass
+		a.length = self.autonomy
 		self.dog.vel = self.dog.vel + a
-		a.length = self.dog.mass
+		a.length = self.autonomy
 		self.vel = self.vel - a
 	end
 end

@@ -7,7 +7,7 @@ function Bush:create (x, y, map)
 	setmetatable(target, Bush)
 	target.sprite = ASSETS.bush
 	target:init_default_value(x, y, map)
-	target:init_target_value(1, 1)
+	target:init_target_value(1, 5)
 	return target
 end
 

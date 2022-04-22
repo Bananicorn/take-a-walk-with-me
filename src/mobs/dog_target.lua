@@ -12,9 +12,8 @@ end
 
 function Dog_Target:init_target_value(priority, range)
 	self.is_target = true
-	self.last_visited = 0
 	self.priority = priority or 1
-	self.range = range or 1
+	self.targeting_range = range or 1
 end
 
 return Dog_Target
