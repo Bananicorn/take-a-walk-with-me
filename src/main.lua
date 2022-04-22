@@ -1,4 +1,5 @@
 require("base.love_shortcuts")
+require("base.run")
 IS_MOBILE = love.system.getOS() == "Android" or love.system.getOS() == "iOS"
 SKIP_INTRO = true
 

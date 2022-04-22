@@ -56,7 +56,7 @@ end
 
 
 function g.draw_bar (x, y, width, height, percentage, color)
-	local fill_width = width / 100 * percentage
+	local fill_width = width / 100 * math.max(math.min(percentage, 100), 0)
 	LG.setColor(color)
 	LG.rectangle("fill", x, y, fill_width, height)
 	LG.setColor(0, 0, 0)
@@ -74,9 +74,11 @@ function g.draw_ui ()
 	LG.setColor(0, 0, 0)
 	LG.print("Autonomy", x, y)
 	y = y + font_height
-	g.draw_bar(x, y, bar_width, bar_height, 50, {0, 1, 0})
+	g.draw_bar(x, y, bar_width, bar_height, g.player.autonomy * 100, {0, 1, 0})
 	y = y + font_height + bar_height + padding
 	LG.print("Stress", x, y)
+	y = y + font_height
+	g.draw_bar(x, y, bar_width, bar_height, g.player.dog.stress, {0, 0, 1})
 end
 
 function g.draw ()
@@ -84,14 +86,11 @@ function g.draw ()
 	LOVESIZE.begin()
 	local w, h = LG.getWidth(), LG.getHeight()
 
-	LG.print(love.timer.getFPS(), 10, 10)
 	for i = 1, #g.mobs do
 		g.map:draw_object(g.mobs[i])
 	end
 	g.map:draw(0, 0, w, h)
 
-	LG.setColor(0, 0, 0)
-	LG.print(love.timer.getFPS(), 10, 10)
 	g.draw_ui()
 
 	LOVESIZE.finish()

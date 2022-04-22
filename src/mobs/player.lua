@@ -54,12 +54,12 @@ function Player:update (dt)
 	if has_moved then
 		self.vel = self.vel + dir
 	end
-	self:physics()
-	self:apply_tether()
+	self:physics(dt)
+	self:apply_tether(dt)
 	self:set_camera()
 end
 
-function Player:apply_tether ()
+function Player:apply_tether (dt)
 	local dist = (self.pos - self.dog.pos).length
 	if dist > self.tether_length then
 		local orig_dog_vel = self.dog.vel.copy
@@ -68,6 +68,7 @@ function Player:apply_tether ()
 		self.dog.vel = self.dog.vel + a
 		a.length = self.autonomy
 		self.vel = self.vel - a
+		self.dog.stress = self.dog.stress + (dt * self.dog.stress_potential)
 	end
 end
 

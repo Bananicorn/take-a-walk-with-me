@@ -19,6 +19,8 @@ function Dog:create (x, y, map, target_pool)
 	dog.last_targets = {}
 	dog.is_target = true
 	dog.targeting_range = 5
+	dog.stress = 0
+	dog.stress_potential = 50
 	for i = 1, target_memory_size do
 		dog.last_targets[i] = false
 	end

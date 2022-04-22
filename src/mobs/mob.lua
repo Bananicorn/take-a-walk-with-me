@@ -17,6 +17,7 @@ function Mob:init_default_value (x, y, map)
 	self.vel = VECTOR(0, 0)
 	self.size = 10
 	self.map = map
+	self.deceleration = .01
 	if self.sprite then
 		self.sprite_width = ASSETS.player:getWidth()
 		self.sprite_height = ASSETS.player:getHeight()
@@ -38,12 +39,11 @@ end
 function Mob:momentum (dt)
 	local x = self.pos.x + self.vel.x
 	local y = self.pos.y + self.vel.y
-	local damping = .95
 	if not self:check_collision(x, y) then
 		self.pos.x = x
 		self.pos.y = y
 	end
-	self.vel = self.vel * damping
+	self.vel = self.vel * math.pow(self.deceleration, dt);
 end
 
 function Mob:draw ()
