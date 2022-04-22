@@ -8,7 +8,7 @@ function Player:create (x, y, map, dog)
 	player.sprite = ASSETS.player
 	player:init_default_value(x, y, map)
 	player.dog = dog
-	player.autonomy = .01
+	player.autonomy = 1
 	player.speed = .5 --tiles per second
 	player.tether_length = 1.5 --length in tiles
 	return player
@@ -24,7 +24,8 @@ function Player:set_camera ()
 end
 
 function Player:end_condition ()
-	return self.dog.stress > 100
+	return false
+	--return self.dog.stress > 100
 end
 
 function Player:update (dt)
@@ -60,12 +61,14 @@ end
 function Player:apply_tether (dt)
 	local dist = (self.pos - self.dog.pos).length
 	if dist > self.tether_length then
-		local orig_dog_vel = self.dog.vel.copy
-		local a = self.pos - self.dog.pos
-		a.length = self.autonomy
-		self.dog.vel = self.dog.vel + a
-		a.length = self.autonomy
-		self.vel = self.vel - a
+		local dist = self.pos - self.dog.pos
+		local dir = dist.normalized
+		local player_vel_adjust = dir * (self.dog.vel.length * (1 - self.autonomy))
+		local dog_vel_adjust = dir * (self.vel.length * self.autonomy)
+
+		self.dog.vel = self.dog.vel + dog_vel_adjust
+		self.vel = self.vel - player_vel_adjust
+
 		self.dog.stress = self.dog.stress + (dt * self.dog.stress_potential)
 	end
 end
