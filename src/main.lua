@@ -16,6 +16,8 @@ Dog = require("mobs.dog")
 Dog_Target = require("mobs.dog_target")
 Fire_Hydrant = require("mobs.fire_hydrant")
 Bush = require("mobs.bush")
+Pickup = require("mobs.pickup")
+Bone = require("mobs.bone")
 Dimetric_Map = require("dimetric")
 
 UTF8 = require("utf8")

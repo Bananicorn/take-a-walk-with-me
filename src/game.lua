@@ -22,16 +22,7 @@ function g.init ()
 	g.player = Player:create(5, 1, g.map, g.dog)
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
-	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(2, 2, g.map)
-	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(2, 4, g.map)
-	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(7, 6, g.map)
-	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(10, 10, g.map)
-	g.mobs[#g.mobs + 1] = Fire_Hydrant:create(12, 10, g.map)
-	g.mobs[#g.mobs + 1] = Bush:create(11, 10, g.map)
-
-	g.mobs[#g.mobs + 1] = Dog:create(6, 6, g.map, g.mobs)
-	g.mobs[#g.mobs + 1] = Dog:create(7, 6, g.map, g.mobs)
-	g.mobs[#g.mobs + 1] = Dog:create(8, 6, g.map, g.mobs)
+	LEVEL.init(g)
 
 	love.draw = g.draw
 	love.update = g.update
