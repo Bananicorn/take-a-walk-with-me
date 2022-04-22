@@ -79,7 +79,7 @@ function Player:draw ()
 	local dx, dy = self.map:tile_pos_to_screen(self.dog.pos.x, self.dog.pos.y)
 	LG.setColor(0, 0, 1)
 	LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height)
-	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx, dy - self.dog.sprite_height * .8)
+	LG.line(x - self.sprite_width / 2, y - self.sprite_height / 2, dx, dy - self.dog.sprite_height * .35)
 end
 
 return Player

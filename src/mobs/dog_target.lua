@@ -16,11 +16,4 @@ function Dog_Target:init_target_value(priority, range)
 	self.range = range or 1
 end
 
-function Dog_Target:update (dt)
-	local dir = {"up", "down", "left", "right"}
-	local a = VECTOR.dir(dir[math.random(1, 4)]) * .01
-	self.vel = self.vel + a
-	self:physics()
-end
-
 return Dog_Target

@@ -54,7 +54,7 @@ function Mob:draw ()
 		LG.setColor(1, 1, 1)
 	end
 	if self.sprite then
-		LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height)
+		LG.draw(self.sprite, x - self.sprite_width / 2, y - self.sprite_height / 2)
 	else
 		LG.circle("fill", x, y, 10)
 	end
