@@ -45,6 +45,7 @@ function love.load ()
 	end
 	LK.setKeyRepeat(true)
 	INTRO.init(MENU.init)
+	MENU.draw_bg = require("menu_bg")
 end
 
 love.draw = MENU.draw
