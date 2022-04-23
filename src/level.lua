@@ -38,6 +38,7 @@ return {
 		g.mobs[#g.mobs + 1] = Dog:create(14, 14, g.map, g.mobs, {1, 0, 0})
 		g.mobs[#g.mobs + 1] = Dog:create(47, 48, g.map, g.mobs, {1, 0, 0})
 		g.mobs[#g.mobs + 1] = Dog:create(27, 48, g.map, g.mobs, {1, 0, 0})
+		g.mobs[#g.mobs + 1] = Dog:create(48, 2, g.map, g.mobs, {1, 0, 0})
 		g.mobs[#g.mobs + 1] = Dog:create(27, 38, g.map, g.mobs, {1, 0, 0})
 
 		g.mobs[#g.mobs + 1] = Car:create(9, 21, g.map, {g.player, g.dog}, VECTOR(0, .1), g)
