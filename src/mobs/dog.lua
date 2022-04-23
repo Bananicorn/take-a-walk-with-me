@@ -22,6 +22,7 @@ function Dog:create (x, y, map, target_pool, tint_color)
 	dog.targeting_range = 15
 	dog.stress = 0
 	dog.stress_potential = 25
+	dog.priority = 5
 	for i = 1, target_memory_size do
 		dog.last_targets[i] = false
 	end
@@ -47,6 +48,7 @@ function Dog:choose_target ()
 			self:push_last_target(self.target)
 			self.target = nil
 		end
+		local possible_targets = {}
 		for i = 1, #self.target_pool do
 			local target = self.target_pool[i]
 			if not target.is_target or target == self then
@@ -70,9 +72,23 @@ function Dog:choose_target ()
 			end
 
 			self.smell_countdown = self.min_smell_time + math.random(0, (self.max_smell_time - self.min_smell_time))
-			self.target = target
+			possible_targets[#possible_targets + 1] = target
 
 			::continue::
+		end
+
+		--now choose targets according to priority!
+		if #possible_targets > 0 then
+			local target_index = 1
+			local highest_priority = 1
+			for i = 1, #possible_targets do
+				local target = possible_targets[i]
+				if target.priority > highest_priority then
+					highest_priority = target.priority
+					target_index = i
+				end
+			end
+			self.target = possible_targets[target_index]
 		end
 	end
 end

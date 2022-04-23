@@ -20,8 +20,8 @@ function g.init (level, spawner)
 	g.big_font = LG.newFont(32)
 	LG.setFont(g.font)
 	g.mobs = {}
-	g.dog = Dog:create(6, 1, g.map, g.mobs, {.4, .1, .1})
-	g.player = Player:create(5, 1, g.map, g.dog)
+	g.dog = Dog:create(6, 2, g.map, g.mobs, {.4, .1, .1})
+	g.player = Player:create(5, 2, g.map, g.dog)
 	g.mobs[#g.mobs + 1] = g.dog
 	g.mobs[#g.mobs + 1] = g.player
 	level.init(g)

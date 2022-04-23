@@ -1,7 +1,7 @@
 [x] Render objects into world correctly
 [x] Render player and dog as circles (at first)
 [ ] Fix buggy line rendering
-[ ] Fix fullscreen
+[x] Fix fullscreen
 [ ] Increase score when things happen (dog successfully sniffed, pickups)
 
 [ ] Game mechanics
