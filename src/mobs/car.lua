@@ -2,21 +2,51 @@ local Car = {}
 Car.__index = Car
 setmetatable(Car, Mob)
 
-function Car:create (x, y, map)
+function Car:create (x, y, map, targets, vel)
 	local car = {}
 	setmetatable(car, Car)
 	car.sprite = ASSETS.car_front
+	if vel.y < 0 then
+		car.sprite = ASSETS.car_back
+	end
 	car:init_default_value(x, y, map)
+	--car.initial_vel = vel
+	car.initial_vel = VECTOR(0,0)
+	car.targets = targets
+	--car.vel = vel
+	car.vel = VECTOR(0,0)
+	car.width = .5
+	car.height = .5
 	return car
 end
 
-function Car:update (dt)
-	--if 0 then
-		--car.sprite = ASSETS.car_front
-	--else
-		--car.sprite = ASSETS.car_back
-	--end
+function Car:collision_action (target)
+	target.stress = 100
 end
 
-return Car
+function Car:collision ()
+	for i = 1, #self.targets do
+		local target = self.targets[i]
+		local dist = (self.pos - target.pos).length
+		local tx, ty = target.pos.x, target.pos.y
+		local sx, sy = self.pos.x, self.pos.y
+		if
+			tx > sx and tx < sx + self.width and
+			ty > sy and ty < sy + self.height
+		then
+			self:collision_action(target)
+		end
+	end
+end
 
+function Car:update (dt)
+	self:physics(dt)
+	self.vel = self.initial_vel
+	if self.pos.y < 1.5 then
+		self.pos.y = self.map.height - 1.5
+	elseif self.pos.y > self.map.height - 1.5 then
+		self.pos.y = 2
+	end
+	self:collision()
+end
+return Car

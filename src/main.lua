@@ -46,6 +46,7 @@ function love.load ()
 	LK.setKeyRepeat(true)
 	INTRO.init(MENU.init)
 	MENU.draw_bg = require("menu_bg")
+	math.randomseed(love.timer.getTime())
 end
 
 love.draw = MENU.draw

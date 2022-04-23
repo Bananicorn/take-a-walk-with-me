@@ -19,9 +19,9 @@ function Dog:create (x, y, map, target_pool, tint_color)
 	dog.target = nil
 	dog.last_targets = {}
 	dog.is_target = true
-	dog.targeting_range = 5
+	dog.targeting_range = 15
 	dog.stress = 0
-	dog.stress_potential = 50
+	dog.stress_potential = 25
 	for i = 1, target_memory_size do
 		dog.last_targets[i] = false
 	end
@@ -61,6 +61,11 @@ function Dog:choose_target ()
 
 			local is_in_range = (self.pos - target.pos).length <= target.targeting_range
 			if not is_in_range then
+				goto continue
+			end
+
+			local random_skip = math.random(0, 10) > 5
+			if random_skip then
 				goto continue
 			end
 
