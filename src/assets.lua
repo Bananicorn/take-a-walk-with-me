@@ -7,6 +7,7 @@ local assets = {
 	bush = love.graphics.newImage('assets/bush.png'),
 	bone = love.graphics.newImage('assets/bone.png'),
 	drink = love.graphics.newImage('assets/drink.png'),
+	bench = love.graphics.newImage('assets/bench.png'),
 	car_front = love.graphics.newImage('assets/car_front.png'),
 	car_back = love.graphics.newImage('assets/car_back.png'),
 	deco_bone = love.graphics.newImage('assets/deco_bone.png'),

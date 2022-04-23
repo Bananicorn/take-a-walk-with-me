@@ -14,7 +14,7 @@ end
 
 function Drink:pickup_action (player)
 	self.to_remove = true
-	player.stress = math.max(0, player.dog.stress - 50)
+	player.stress = math.max(0, player.stress - 50)
 	self.spawner.powerups_present = self.spawner.powerups_present - 1
 end
 

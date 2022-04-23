@@ -19,6 +19,7 @@ Bush = require("mobs.bush")
 Pickup = require("mobs.pickup")
 Bone = require("mobs.bone")
 Drink = require("mobs.drink")
+Bench = require("mobs.bench")
 Car = require("mobs.car")
 Dimetric_Map = require("dimetric")
 

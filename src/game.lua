@@ -23,10 +23,10 @@ function g.init (level, spawner)
 	g.mobs = {}
 	g.dog = Dog:create(6, 2, g.map, g.mobs, {.4, .1, .1})
 	g.player = Player:create(5, 2, g.map, g.dog)
-	g.mobs[#g.mobs + 1] = g.dog
-	g.mobs[#g.mobs + 1] = g.player
 	level.init(g)
 	spawner.init(g)
+	g.mobs[#g.mobs + 1] = g.dog
+	g.mobs[#g.mobs + 1] = g.player
 
 	love.draw = g.draw
 	love.update = g.update
