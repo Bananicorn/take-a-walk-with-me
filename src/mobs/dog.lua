@@ -12,6 +12,8 @@ function Dog:create (x, y, map, target_pool, tint_color)
 	dog.smell_stress_reduction = 5
 	dog.tint_color = tint_color or dog:get_random_color()
 	dog.target_pool = target_pool or {}
+	dog.targeting_timestamp = 0
+	dog.max_targeting_time = 7 --maximum time to chase anything (seconds)
 	dog.smell_range = .5 --how close do we need to be to smell? (in tiles)
 	dog.min_smell_time = .2 --seconds
 	dog.max_smell_time = 3 --seconds
@@ -47,7 +49,14 @@ function Dog:on_finish_sniffing ()
 	self.target = nil
 end
 
+function Dog:on_target_chosen ()
+	self.targeting_timestamp = love.timer.getTime()
+end
+
 function Dog:choose_target ()
+	if self.targeting_timestamp + self.max_targeting_time < love.timer.getTime() then
+		self.target = nil
+	end
 	if not self.target or self.smell_countdown < 0 then
 		if self.target then
 			self:on_finish_sniffing()
@@ -93,6 +102,7 @@ function Dog:choose_target ()
 				end
 			end
 			self.target = possible_targets[target_index]
+			self:on_target_chosen()
 		end
 	end
 end

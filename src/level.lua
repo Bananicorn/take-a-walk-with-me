@@ -9,8 +9,18 @@ return {
 			g.mobs[#g.mobs + 1] = Bush:create(6, 2 + i, g.map)
 			g.mobs[#g.mobs + 1] = Bush:create(7, 2 + i, g.map)
 		end
+
+		for i = 1, 8 do
+			g.mobs[#g.mobs + 1] = Bush:create(11 + i, 12, g.map)
+			g.mobs[#g.mobs + 1] = Bush:create(11 + i, 13, g.map)
+		end
+
 		g.mobs[#g.mobs + 1] = Bush:create(32, 8, g.map)
+
 		g.mobs[#g.mobs + 1] = Dog:create(14, 14, g.map, g.mobs, {1, 0, 0})
+		g.mobs[#g.mobs + 1] = Dog:create(47, 48, g.map, g.mobs, {1, 0, 0})
+		g.mobs[#g.mobs + 1] = Dog:create(27, 48, g.map, g.mobs, {1, 0, 0})
+		g.mobs[#g.mobs + 1] = Dog:create(27, 38, g.map, g.mobs, {1, 0, 0})
 
 		g.mobs[#g.mobs + 1] = Car:create(9, 21, g.map, {g.player, g.dog}, VECTOR(0, .1))
 		g.mobs[#g.mobs + 1] = Car:create(9, 24, g.map, {g.player, g.dog}, VECTOR(0, .1))

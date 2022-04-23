@@ -8,7 +8,7 @@ function Player:create (x, y, map, dog)
 	player.sprite = ASSETS.player
 	player:init_default_value(x, y, map)
 	player.dog = dog
-	player.autonomy = .9
+	player.autonomy = .7
 	player.speed = .5 --tiles per second
 	player.base_tether_length = 1.5 --length in tiles
 	player.tether_length = player.base_tether_length --length in tiles
