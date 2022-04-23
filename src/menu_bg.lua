@@ -4,7 +4,7 @@ quad = love.graphics.newQuad(0, 0, w + 128, h + 128, 64, 64)
 
 return function ()
 	w, h = LG.getWidth(), LG.getHeight()
-	local x, y = (love.timer.getTime() * 100 % 64) - 64, (love.timer.getTime() * 100 % 64) - 64
+	local x, y = (love.timer.getTime() * 20 % 64) - 64, (love.timer.getTime() * 20 % 64) - 64
 	LG.setColor(0, 0, 0)
 	LG.rectangle("fill", 0, 0, w, h)
 	LG.setColor(1, 1, 1)

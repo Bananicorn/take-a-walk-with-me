@@ -10,7 +10,7 @@ return {
 			g.mobs[#g.mobs + 1] = Bush:create(7, 2 + i, g.map)
 		end
 		g.mobs[#g.mobs + 1] = Dog:create(14, 14, g.map, g.mobs)
-		g.mobs[#g.mobs + 1] = Car:create(3, 3, g.map, g.mobs)
+		g.mobs[#g.mobs + 1] = Car:create(9, 3, g.map, g.mobs)
 	end,
 	elevation_map = {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,

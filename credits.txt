@@ -3,16 +3,13 @@ These are the Credits.
 Input is handled by baton.lua, written by Andrew Minnich, but modified by me.
 So if anything's wrong with the input, it's probably my fault.
 
+Let's be honest, even this tiny little game would be nothing
+without the open source community.
 
-Testing text
+All the assets and game specifit code are by me,
+but the heavy lifting is done by the Löve framework.
+(www.love2d.org)
 
-multiple
-
-lines
-
-
-apart
-
-
-#Testing title
-##Testing sub-title
+A lot of really good ideas and insprations came from the fine folks
+at the gamejam itself, either as direct suggestions, or indirectly
+through inspration.

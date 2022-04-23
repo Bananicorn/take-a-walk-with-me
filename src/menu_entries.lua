@@ -16,10 +16,10 @@ local menu_entries = {
 				GAME.init(LEVEL, SPAWNER)
 			end
 		),
-		MC.link:create(
-			"Options",
-			"options"
-		),
+		--MC.link:create(
+			--"Options",
+			--"options"
+		--),
 		MC.entry:create(
 			"Credits",
 			function ()
