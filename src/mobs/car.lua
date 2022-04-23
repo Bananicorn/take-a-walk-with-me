@@ -10,11 +10,9 @@ function Car:create (x, y, map, targets, vel)
 		car.sprite = ASSETS.car_back
 	end
 	car:init_default_value(x, y, map)
-	--car.initial_vel = vel
-	car.initial_vel = VECTOR(0,0)
+	car.initial_vel = vel
 	car.targets = targets
-	--car.vel = vel
-	car.vel = VECTOR(0,0)
+	car.vel = vel
 	car.width = .5
 	car.height = .5
 	return car

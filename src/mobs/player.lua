@@ -27,8 +27,7 @@ function Player:set_camera ()
 end
 
 function Player:end_condition ()
-	return false
-	--return self.dog.stress + self.stress > 100
+	return self.dog.stress + self.stress > 100
 end
 
 function Player:update (dt)

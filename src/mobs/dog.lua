@@ -41,12 +41,16 @@ function Dog:push_last_target (target)
 	self.last_targets[#self.last_targets] = target
 end
 
+function Dog:on_finish_sniffing ()
+	self.stress = math.max(0, self.stress - self.smell_stress_reduction)
+	self:push_last_target(self.target)
+	self.target = nil
+end
+
 function Dog:choose_target ()
 	if not self.target or self.smell_countdown < 0 then
 		if self.target then
-			self.stress = self.stress - self.smell_stress_reduction
-			self:push_last_target(self.target)
-			self.target = nil
+			self:on_finish_sniffing()
 		end
 		local possible_targets = {}
 		for i = 1, #self.target_pool do
@@ -66,7 +70,7 @@ function Dog:choose_target ()
 				goto continue
 			end
 
-			local random_skip = math.random(0, 10) > 5
+			local random_skip = math.random(1, 10) > 3
 			if random_skip then
 				goto continue
 			end
