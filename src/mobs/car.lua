@@ -2,7 +2,7 @@ local Car = {}
 Car.__index = Car
 setmetatable(Car, Mob)
 
-function Car:create (x, y, map, targets, vel)
+function Car:create (x, y, map, targets, vel, game)
 	local car = {}
 	setmetatable(car, Car)
 	car.sprite = ASSETS.car_front
@@ -15,10 +15,12 @@ function Car:create (x, y, map, targets, vel)
 	car.vel = vel
 	car.width = .5
 	car.height = .5
+	car.game = game
 	return car
 end
 
 function Car:collision_action (target)
+	self.game.game_over_text = "Don't get run over!"
 	target.stress = 100
 end
 

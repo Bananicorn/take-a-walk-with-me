@@ -18,6 +18,7 @@ function g.init (level, spawner)
 	g.score_multiplier = 100
 	g.font = LG.newFont(16)
 	g.big_font = LG.newFont(32)
+	g.game_over_text = "Too much stress!"
 	LG.setFont(g.font)
 	g.mobs = {}
 	g.dog = Dog:create(6, 2, g.map, g.mobs, {.4, .1, .1})
@@ -71,7 +72,8 @@ function g.update (dt)
 end
 
 function g.draw_end_screen ()
-	local title_text = "Game over!"
+	MENU.draw_bg()
+	local title_text = g.game_over_text
 	local w, h = LG.getWidth(), LG.getHeight()
 	local title_height = g.big_font:getHeight()
 	local title_width = g.big_font:getWidth(title_text)
@@ -81,9 +83,9 @@ function g.draw_end_screen ()
 	local score_text = "Score: " .. math.floor(g.score * g.score_multiplier)
 	local score_height = g.big_font:getHeight()
 	local score_width = g.big_font:getWidth(score_text)
-	LG.setFont(g.font)
 	LG.print(score_text, w / 2 - score_width / 2, h / 2 + title_height - score_height / 2)
-	LG.print("Press space or escape to continue", 10, h - score_height)
+	LG.setFont(g.font)
+	LG.print("Press space or escape to continue", score_height * .75, h - score_height)
 end
 
 function g.draw_combined_bar (x, y, width, height, percentage, color, percentage2, color2)
